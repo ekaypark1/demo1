@@ -29,6 +29,13 @@
 	// Methods
 	//
 
+
+
+
+
+
+
+
 	//
 	// getUrlParam
 	//
@@ -85,12 +92,19 @@
         })
         
         $(window).scroll(function(){
-            if ( $(window).scrollTop() >= 1000 ) {
-                $('.menu-bar').animate({'opacity':'1'}, 1000);
+            if ( $(window).scrollTop() >= 220 ) {
+                $('.menu-bar').animate({'opacity':'1'}, 800);
             } else {
                 $('.menu-bar').attr('style', '');
             }
         });
+
+
+        $('#exploreBtn').click(function(){
+        	$('body').scrollTo('#target');
+        });
+
+
 	};
 
 
@@ -124,5 +138,37 @@
 	// DOCUMENT READY
 	//
 	$(document).ready(function() { NAMESPACE.init(); });
+
+	$(function(){
+			const config = {
+		    apiKey: "AIzaSyC4G1LXMv09ICSfJUr59juyBuQChG62kIU",
+		    authDomain: "demo1-1c1bb.firebaseapp.com",
+		    databaseURL: "https://demo1-1c1bb.firebaseio.com",
+		    storageBucket: "demo1-1c1bb.appspot.com",
+		    messagingSenderId: "337606471179"
+		  };
+		  firebase.initializeApp(config);			
+		  	$('.js-form').on('submit', event => {
+		  		event.preventDefault();
+		  		const email = $('#jsEmail').val();
+		  		const password = $('#jsPassword').val();
+		  		const message = $('#jsMessage').val();
+		  		console.log(email, password, message);
+					firebase.auth().signInWithEmailAndPassword(email, password)
+						.then(user => {
+							firebase.database().ref('messages').push({
+								message,
+							});
+						})
+						.catch(error => {
+							console.log(error);
+						});
+
+
+
+		  	});
+
+	});
+
 
 }(window.NAMESPACE = window.NAMESPACE || {}, jQuery));

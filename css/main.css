@@ -1,4 +1,4 @@
-/***** RESET *****/
+A/***** RESET *****/
 html, body, div, object, dl, dt, dd, ol, ul, li, h1, h2, h3, h4, h5, h6, p, blockquote, pre, form, fieldset, input, textarea, select, label, legend, button, a, small, table, th, td {margin:0; padding:0; line-height:1em;}
 article, aside, details, figcaption, figure, footer, hgroup, nav, section {display:block;}
 audio, header, canvas, video {display:inline-block;}
@@ -234,7 +234,9 @@ nav li {
         nav li a:hover {
             color: white;
             border-bottom: 5px solid white;
-            padding-bottom: 10px;
+            padding-bottom: 10px;    
+            transition: all .3s ease-in;
+
         }
 
 /*FREQUENT CLASSES*/
@@ -248,8 +250,44 @@ nav li {
 
 /*BODY*/
 
+.hero-wrapper {
+    width: auto;
+    margin: 0 23%;
+    padding-top: 300px;
+}
+    .hero-wrapper .hero-text {
+        color: white;
+        text-align: center;
+        font-size: 3em;
+        letter-spacing: 2px;
+    }
+
+
+.main-btn {
+    cursor: pointer;
+    text-align: center;
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 2px solid white;
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+}
+.main-btn:hover {
+    color: black;
+    background: white;
+    border: 2px solid white;
+    transition: all .3s ease-in;
+}
+
+
+
+
+
+
 section {
-    height: 100vh;
+    height: 70vh;
     width: auto;
 }
 
@@ -258,6 +296,8 @@ section {
     max-width: 100%;
     margin: 0 23%;
 }
+
+
 
 /*SECTION 1*/
 
@@ -290,6 +330,70 @@ section {
 }
 
 /*SECTION 2*/
+.black-background {
+    background: black;
+    height: 100%;
+}
+
+
+
+.contact-form {
+    margin: 0 auto;
+    display: block;
+    width: 60%;
+    min-width: 500px;
+    height: auto;
+    background-color: black;
+}
+    .contact-form h2 {
+        text-align: center;
+        padding-top: 59px;
+        background: black;
+        color: white;
+        padding-bottom: 28px;
+    }
+    .contact-form form {
+        text-align: center;
+    }
+        .contact-form form input {
+            border: 1px solid #ccc;
+            padding: 10px 2px;
+            margin: 20px 0;
+            outline: none;
+        }
+
+            .contact-form .input-name {
+                width: 194px;
+                display: inline;
+            }
+            .contact-form .input-email {
+                width: 400px;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .contact-form .input-message {
+                width: 400px;
+                display: block;
+                margin: 30px auto;
+                height: 100px;
+            }
+            .contact-form .btn-submit {
+                border: 2px solid white;
+                background-color: black;
+                font-size: 20px;
+                color: white;
+                padding: 10px;
+
+            }
+                .contact-form .btn-submit:hover {
+                    border: 2px solid white;
+                    color: black;
+                    background: white;
+                    -webkit-transition: all .4s ease-out;
+                    -ms-transition: all .4s ease-out;
+                    transition: all .4s ease-out;
+                }
 
 
 
