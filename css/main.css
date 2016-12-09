@@ -1,0 +1,296 @@
+/***** RESET *****/
+html, body, div, object, dl, dt, dd, ol, ul, li, h1, h2, h3, h4, h5, h6, p, blockquote, pre, form, fieldset, input, textarea, select, label, legend, button, a, small, table, th, td {margin:0; padding:0; line-height:1em;}
+article, aside, details, figcaption, figure, footer, hgroup, nav, section {display:block;}
+audio, header, canvas, video {display:inline-block;}
+body {text-rendering:optimizeLegibility;}
+html, fieldset, img, abbr {border:0;}
+img {vertical-align:middle;}
+ul, ol {padding-left:1.5em;}
+input, textarea, select, button {font-size:1em; font-family:inherit;}
+input[type="text"] {-webkit-appearance:none; border-radius:0;}
+button, input[type="button"], input[type="reset"], input[type="submit"], label[for] {cursor:pointer;}
+sup, sub {position:relative; top:-.4em; vertical-align:baseline;}
+sub {top:.3em;}
+table {border-collapse:collapse; border-spacing:0;}
+th {text-align:left;}
+code {white-space:pre;}
+abbr[title] {cursor:help;}
+ins {text-decoration:none;}
+q:before, q:after {content:"";}
+a:hover, a:focus, a:active {outline:0;}
+/***** CLEARFIX *****/
+.cf:before, .cf:after {content:""; display:table;}
+.cf:after {clear:both;}
+
+/*
+selector {
+                    ---LAYOUT---
+    visibility
+    display
+    position
+    top
+    right
+    bottom
+    left
+    float
+    clear
+    z-index
+                    ---STRUCTURE---
+    width
+    min-width
+    max-width
+    height
+    min-height
+    max-height
+    resize
+    padding (t,r,b,l)
+    border (t,r,b,l)
+        -width (t,r,b,l)
+        -style (t,r,b,l)
+        -color (t,r,b,l)
+        -collapse
+        -radius
+        -image (t,r,b,l)
+        -corner-image (tl,tr,br,bl)
+    margin (t,r,b,l)
+    outline
+        -color
+        -style
+        -width
+    box-shadow
+    overflow
+    background
+        -color
+        -image
+        -repeat
+        -position
+        -attachment
+    opacity
+                    ---PARAGRAPH---
+    direction
+    text-align
+    text-indent
+    vertical-align
+    list-style
+        -type
+        -position
+        -image
+    white-space
+                    ---CHARACTER---
+    color
+    font
+        -style
+        -variant
+        -weight
+        -size
+        -family
+    line-height
+    letter-spacing
+    word-spacing
+    text-transform
+    text-decoration
+    text-shadow
+                    ---MISC---
+    content
+    cursor
+    pointer-events
+    transition
+}
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Oswald;
+    height: 50rem;
+}
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.full-page {
+    height: 100vh;
+    width: 100vw;
+}
+
+#headerWrapper {
+    max-width: 100vw;
+    position: relative;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    background-image: url('../img/heroimg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    height: 100vh;
+    z-index: 1;
+}
+header .menu-bar {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background: black;
+    opacity: 0;
+    top: 0;
+}
+
+    header h1 {
+        position: fixed;
+        text-align: center;
+        width: 100%;
+        color: white;
+        line-height: 50px;
+        font-size: 44px;
+    }
+      
+header .text-underline {
+    text-decoration: underline;
+}
+
+
+
+/*HAMBURGER MENU*/
+header .menu-wrapper {
+    margin-top: 20px;
+}
+header .hamburger-menu {
+    position: fixed;
+    width: 35px;
+    height: 20px;
+    margin-top: 22px;
+    left: 20%;
+    float: left;
+    z-index: 2;
+}
+    .hamburger-menu span {
+        position: absolute;
+        top: 8px;
+        width: 100%;
+        border-top: 3px solid white;
+        transition: all .3s ease-in-out;
+        margin-right: 0 auto;
+    }   
+        .hamburger-menu span:first-child {
+            width: 50%;
+            top: 0;
+        }
+        .hamburger-menu span:nth-child(2) {
+            width: 75%;
+        }
+        .hamburger-menu span:last-child {
+            top: 16px;
+        }
+            .hamburger-menu:hover span {
+                width: 100%;
+            }
+
+/*MENU EXPANDED*/
+.side-menu  {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #3f3f3f;
+    left: 0;
+    top: 0;
+    z-index: 9;
+}
+
+nav span {
+    height: 100px;
+    width: 100px;
+    font-size: 3em;
+    left: 20%;
+    text-align: left;
+    display: block;
+    padding-top: 50px;
+    position: absolute;
+}
+    nav span:hover {
+        
+    }
+nav ul {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-left: 0;
+}
+
+nav li {
+    list-style: none;
+    margin: 0 auto;
+    
+
+}
+    nav li a {
+        text-decoration: none;
+        color: #b2b0a9;
+        font-size: 18px;
+        line-height: 5;
+        letter-spacing: 2px;
+    }
+        nav li a:hover {
+            color: white;
+            border-bottom: 5px solid white;
+            padding-bottom: 10px;
+        }
+
+/*FREQUENT CLASSES*/
+
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+
+/*BODY*/
+
+section {
+    height: 100vh;
+    width: auto;
+}
+
+
+.about-me {
+    max-width: 100%;
+    margin: 0 23%;
+}
+
+/*SECTION 1*/
+
+.text-box {
+    
+    height: 400px;
+}
+    .text-box h2 { 
+    line-height: 4;
+    }
+    .text-box p {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+.curate-btn {
+    cursor: pointer;
+    text-align: center;
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 2px solid black;
+    font-size: 16px;
+    padding: 10px;
+}
+.curate-btn:hover {
+    color: white;
+    background: black;
+    border: 2px solid black;
+    transition: all .3s ease-in;
+}
+
+/*SECTION 2*/
+
+
+
+
