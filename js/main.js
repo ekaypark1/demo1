@@ -100,10 +100,47 @@
         });
 
 
-        $('#exploreBtn').click(function(){
-        	$('body').scrollTo('#target');
+        $('button').click(function(){
+        	$('html,body').animate({
+        		scrollTop: $('#sectionTwo').offset().top-90}, 
+        		'slow');
         });
 
+
+
+        //FIREBASE FORM//
+
+
+    	  	$('.js-form').on('submit', event => {
+	  		event.preventDefault();
+
+
+
+	  		const email = $('#jsEmail').val();
+	  		const password = $('#jsPassword').val();
+	  		const message = $('#jsMessage').val();
+	  		const title = $('#jsTitle').val();
+
+
+
+
+
+
+
+	  		console.log(email, password, message, title);
+				firebase.auth().signInWithEmailAndPassword(email, password)
+					.then(user => {
+						firebase.database().ref('messages').push({
+							message,
+						});
+					})
+					.catch(error => {
+						console.log(error);
+					});
+
+
+
+	  	});
 
 	};
 
@@ -148,25 +185,7 @@
 		    messagingSenderId: "337606471179"
 		  };
 		  firebase.initializeApp(config);			
-		  	$('.js-form').on('submit', event => {
-		  		event.preventDefault();
-		  		const email = $('#jsEmail').val();
-		  		const password = $('#jsPassword').val();
-		  		const message = $('#jsMessage').val();
-		  		console.log(email, password, message);
-					firebase.auth().signInWithEmailAndPassword(email, password)
-						.then(user => {
-							firebase.database().ref('messages').push({
-								message,
-							});
-						})
-						.catch(error => {
-							console.log(error);
-						});
-
-
-
-		  	});
+	
 
 	});
 
